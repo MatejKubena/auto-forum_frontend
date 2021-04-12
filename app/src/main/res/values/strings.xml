@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MTAAprojekt</string>
+    <string name="home">Home</string>
+    <string name="rules">Rules</string>
+    <string name="discussions">Discussions</string>
+    <string name="diagnostics">Diagnostics</string>
+    <string name="parts">Parts</string>
+    <string name="legislature">Legislature</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="tuning">Tuning</string>
 </resources>
