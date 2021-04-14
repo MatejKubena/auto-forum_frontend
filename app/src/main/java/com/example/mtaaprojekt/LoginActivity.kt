@@ -22,8 +22,13 @@ class LoginActivity : AppCompatActivity() {
 //
 //            val url = "http://localhost:8080/login"
 
-            val goToProfile = Intent(this, ProfileActivity::class.java)
-            startActivity(goToProfile)
+/*
+* Zakomentovane pre testovacie ucely
+*          val goToProfile = Intent(this, ProfileActivity::class.java)
+*          startActivity(goToProfile)
+*/
+            val goToHome = Intent(this, HomeActivity::class.java)
+            startActivity(goToHome)
         }
 
         binding.button8.setOnClickListener {
