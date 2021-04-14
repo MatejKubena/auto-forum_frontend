@@ -26,6 +26,17 @@ class LoginActivity : AppCompatActivity() {
             startActivity(goToProfile)
         }
 
+        binding.button8.setOnClickListener {
+
+//            val mail = binding.editTextTextEmailAddress.text
+//            val password = binding.editTextTextPassword.text
+//
+//            val url = "http://localhost:8080/login"
+
+            val goToRegister = Intent(this, RegisterActivity::class.java)
+            startActivity(goToRegister)
+        }
+
 
     }
 }
