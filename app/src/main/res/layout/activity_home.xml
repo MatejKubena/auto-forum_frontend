@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--<androidx.constraintlayout.widget.ConstraintLayout> -->
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".HomeActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_container"/>
+
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="420dp"
-        android:layout_height="70dp"
-        android:textColor="#000000"
-        android:backgroundTint="#C4C4C4"
-        android:text="@string/home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="420dp"
+        android:id="@+id/rules"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
@@ -31,11 +25,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        android:layout_gravity="top"
+        android:layout_marginTop="0dp"/>
+
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="420dp"
+        android:id="@+id/discussions"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
@@ -43,23 +39,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        android:layout_gravity="top"
+        android:layout_marginTop="70dp"/>
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="420dp"
+        android:id="@+id/diagnostics"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
         android:text="@string/diagnostics"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        android:layout_gravity="top"
+        android:layout_marginTop="140dp"/>
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="420dp"
+        android:id="@+id/legislature"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
@@ -67,11 +65,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        android:layout_gravity="top"
+        android:layout_marginTop="210dp"/>
 
     <Button
-        android:id="@+id/button5"
-        android:layout_width="420dp"
+        android:id="@+id/parts"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
@@ -79,11 +78,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        android:layout_gravity="top"
+        android:layout_marginTop="280dp"/>
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="420dp"
+        android:id="@+id/maitenance"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
@@ -91,63 +91,87 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        android:layout_gravity="top"
+        android:layout_marginTop="350dp"/>
+
 
     <Button
-        android:id="@+id/button7"
-        android:layout_width="420dp"
+        android:id="@+id/tuning"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
         android:text="@string/tuning"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        android:layout_gravity="top"
+        android:layout_marginTop="420dp"/>
 
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_bar_app"
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottombar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+
+
+    </ScrollView>
+
+
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bottombar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:theme="?attr/actionBarTheme" >
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="18dp"
-            android:backgroundTint="@android:color/transparent"
-            app:menu="@menu/bottom_nav_menu"/>
+        <ImageButton
+            android:id="@+id/navButtHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_home" />
+        <ImageButton
+            android:id="@+id/navButtMyposts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_my_threds" />
+        <ImageButton
+            android:id="@+id/navButtFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_favorites" />
+        <ImageButton
+            android:id="@+id/navButtProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_profile" />
+        <ImageButton
+            android:id="@+id/navButtMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_more" />
 
-    </com.google.android.material.bottomappbar.BottomAppBar>
+    </androidx.appcompat.widget.Toolbar>
+
+</RelativeLayout>
 
 
-
-
-<!--
-    <FrameLayout
-    android:id="@+id/flFragment"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="88dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
--->
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-<!--<androidx.constraintlayout.widget.ConstraintLayout>-->
