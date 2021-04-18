@@ -4,15 +4,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    android:padding="8dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottombar"
-        android:layout_below="@+id/topBar"
-        android:clipToPadding="false"
-        android:padding="4dp" />
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_text"/>
+
+    <TextView
+        android:id="@+id/post_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:text="Title"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/post_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:text="User" />
+
+    <ImageView
+        android:id="@+id/post_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_title"
+        android:layout_toRightOf="@id/post_user"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="11dp"
+        app:srcCompat="@drawable/ic_baseline_fiber_manual_record_24" />
+
+    <TextView
+        android:id="@+id/post_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_title"
+        android:layout_toRightOf="@id/post_divider"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="Date" />
+
+    <TextView
+        android:id="@+id/post_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_user"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@android:color/black"
+        android:text="Text" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"
@@ -73,6 +122,5 @@
             app:srcCompat="@drawable/nav_bar_more" />
 
     </androidx.appcompat.widget.Toolbar>
-
 
 </RelativeLayout>

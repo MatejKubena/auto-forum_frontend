@@ -13,6 +13,9 @@ class HomeActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val userId = intent.extras!!.getString("userId")
+
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
 
