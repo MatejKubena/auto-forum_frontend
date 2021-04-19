@@ -5,6 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
+
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".HomeActivity">
@@ -15,103 +17,124 @@
         android:id="@+id/fragment_container"/>
 
 
-    <Button
+    <TextView
         android:id="@+id/rules"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:background="@drawable/textview_border"
+        android:textSize="32sp"
         android:text="@string/rules"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
+        android:gravity="center"
         android:layout_marginTop="0dp"/>
 
 
-    <Button
+    <TextView
         android:id="@+id/discussions"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:background="@drawable/textview_border"
+        android:textSize="32sp"
         android:text="@string/discussions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
+        android:gravity="center"
         android:layout_marginTop="70dp"/>
 
-    <Button
+    <TextView
         android:id="@+id/diagnostics"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:backgroundTint="#C4C4C4"
+        android:background="@drawable/textview_border"
+        android:textSize="32sp"
         android:text="@string/diagnostics"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
+        android:gravity="center"
         android:layout_marginTop="140dp"/>
 
-    <Button
+    <TextView
         android:id="@+id/legislature"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:background="@drawable/textview_border"
+        android:textSize="32sp"
         android:text="@string/legislature"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
+        android:gravity="center"
         android:layout_marginTop="210dp"/>
 
-    <Button
+    <TextView
         android:id="@+id/parts"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:background="@drawable/textview_border"
+        android:textSize="32sp"
         android:text="@string/parts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
+        android:gravity="center"
         android:layout_marginTop="280dp"/>
 
-    <Button
+    <TextView
         android:id="@+id/maitenance"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:background="@drawable/textview_border"
+        android:textSize="32sp"
         android:text="@string/maintenance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
+        android:gravity="center"
         android:layout_marginTop="350dp"/>
 
 
-    <Button
+    <TextView
         android:id="@+id/tuning"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:backgroundTint="#C4C4C4"
+        android:textSize="32sp"
         android:text="@string/tuning"
         android:textColor="#000000"
+        android:background="@drawable/textview_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
+        android:gravity="center"
         android:layout_marginTop="420dp"/>
 
 
 
 
-
+<!--
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -125,7 +148,7 @@
 
 
     </ScrollView>
-
+-->
 
 
 

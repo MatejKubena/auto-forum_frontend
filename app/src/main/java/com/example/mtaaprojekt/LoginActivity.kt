@@ -28,10 +28,11 @@ class LoginActivity : AppCompatActivity() {
 //
 //            val url = "http://localhost:8080/login"
 
+
+
 ///
-// Zakomentovane pre testovacie ucely
-//          val goToProfile = Intent(this, ProfileActivity::class.java)
-//         startActivity(goToProfile)
+       val goToProfile = Intent(this, ProfileActivity::class.java)
+      startActivity(goToProfile)
 //
 
 
@@ -96,8 +97,9 @@ class LoginActivity : AppCompatActivity() {
 
         binding.button8.setOnClickListener {
 
-//            val mail = binding.editTextTextEmailAddress.text
-//            val password = binding.editTextTextPassword.text
+            val mail = binding.editTextTextUsername.text
+            val password = binding.editTextTextPassword.text
+            val url = "http://192.168.100.16:8080/register"
 //
 //            val url = "http://localhost:8080/login"
 
