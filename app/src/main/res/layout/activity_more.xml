@@ -6,47 +6,15 @@
     android:layout_height="match_parent">
     android:padding="8dp">
 
-    <EditText
-        android:id="@+id/edit_post_title"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/topBar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
-        android:ems="10"
-        android:hint="Title"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_text" />
-
-    <EditText
-        android:id="@+id/edit_post_text"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edit_post_title"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
-        android:ems="10"
-        android:hint="Title"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_text" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_post_text"
-        android:layout_marginTop="64dp"
-        android:layout_marginStart="256dp"
-        android:text="Add" />
+        android:id="@+id/logOutButton"
+        android:layout_below="@id/topBar"
+        android:text="Log Out"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"
@@ -57,19 +25,12 @@
         android:layout_alignParentTop="true"
         android:theme="?attr/actionBarTheme" >
 
-        <ImageButton
-            android:id="@+id/topBarBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
-
         <TextView
             android:id="@+id/topBarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
-            android:text="Add Post"
+            android:text="More"
             android:textColor="@color/white"
             android:textSize="24dp" />
 
@@ -116,11 +77,5 @@
             app:srcCompat="@drawable/nav_bar_more" />
 
     </androidx.appcompat.widget.Toolbar>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_post_text"
-        android:layout_marginTop="64dp"/>
 
 </RelativeLayout>

@@ -72,6 +72,25 @@ class LoginActivity : AppCompatActivity() {
 
             queue.add(jsonObjectRequest)
 
+//            MultipartRequest request = new MultipartRequest(url, headers,
+//                new Response.Listener<NetworkResponse>() {
+//                    @Override
+//                    public void onResponse(NetworkResponse response) {
+//                        ...
+//                    }
+//                },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        ...
+//                    }
+//                });
+//
+//            request.addPart(new FormPart(fieldName,value));
+//            request.addPart(new FilePart(fileFieldName, mimeType, fileName, data);
+//
+//            requestQueue.add(request);
+
 
         }
 
@@ -82,15 +101,11 @@ class LoginActivity : AppCompatActivity() {
 //
 //            val url = "http://localhost:8080/login"
 
-            val goToRegister = Intent(this, RegisterActivity::class.java)
-            startActivity(goToRegister)
-//            val goToRegister = Intent(this, CategoryActivity::class.java)
+//            val goToRegister = Intent(this, RegisterActivity::class.java)
 //            startActivity(goToRegister)
+            val goToRegister = Intent(this, CategoryActivity::class.java)
+            startActivity(goToRegister)
 
         }
-
-
-
-
     }
 }

@@ -1,3 +1,3 @@
 package com.example.mtaaprojekt
 
-data class CategoryItem(val  text1: String, val text2: String)
+data class CategoryItem(var  text1: String, var text2: String)
