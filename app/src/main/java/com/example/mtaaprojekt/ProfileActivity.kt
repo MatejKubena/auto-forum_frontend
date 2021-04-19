@@ -1,6 +1,7 @@
 package com.example.mtaaprojekt
 
 import android.R
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,9 @@ class ProfileActivity : AppCompatActivity() {
     private var requestQueue: RequestQueue? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val userId = intent.extras!!.getString("userId")
+
         super.onCreate(savedInstanceState)
 
         binding = ActivityProfileBinding.inflate(layoutInflater)
@@ -43,9 +47,32 @@ class ProfileActivity : AppCompatActivity() {
 //// Access the RequestQueue through your singleton class.
 //        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
 
+        binding.navButtProfile.setOnClickListener {
+            val goToProfile = Intent(this, ProfileActivity::class.java)
+            goToProfile.putExtra("userId", userId)
+            startActivity(goToProfile)
+        }
+
+        binding.navButtHome.setOnClickListener{
+            val goToHome = Intent(this, HomeActivity::class.java)
+            goToHome.putExtra("userId", userId)
+            startActivity(goToHome)
+        }
+
+        binding.navButtMyposts.setOnClickListener{
+            val goToMypost = Intent(this, MypostActivity::class.java)
+            goToMypost.putExtra("userId", userId)
+            startActivity(goToMypost)
+        }
+
+        binding.navButtMore.setOnClickListener {
+            val goToMore = Intent(this, HomeActivity::class.java)
+            goToMore.putExtra("userId", userId)
+            startActivity(goToMore)
+        }
 
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.100.16:8080/user?id=1"
+        val url = "http://192.168.100.16:8080/user?id=$userId"
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             Response.Listener { response ->
@@ -60,6 +87,8 @@ class ProfileActivity : AppCompatActivity() {
         )
 
         queue.add(jsonObjectRequest)
+
+
 
 //// Instantiate the RequestQueue.
 //        val queue = Volley.newRequestQueue(this)

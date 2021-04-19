@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:layout_below="@id/topBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,6 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="TextView"
+        android:layout_below="@id/topBar"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_marginLeft="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -32,8 +36,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
+        android:layout_below="@id/textView3"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_marginLeft="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -44,7 +51,79 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="TextView"
+        android:layout_below="@id/textView4"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_marginLeft="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:theme="?attr/actionBarTheme" >
+
+        <ImageButton
+            android:id="@+id/topBarBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/topBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:text="Post"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:theme="?attr/actionBarTheme" >
+
+        <ImageButton
+            android:id="@+id/navButtHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_home" />
+        <ImageButton
+            android:id="@+id/navButtMyposts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_my_threds" />
+        <ImageButton
+            android:id="@+id/navButtFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_favorites" />
+        <ImageButton
+            android:id="@+id/navButtProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_profile" />
+        <ImageButton
+            android:id="@+id/navButtMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/nav_bar_more" />
+
+    </androidx.appcompat.widget.Toolbar>
+</RelativeLayout>

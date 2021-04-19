@@ -52,14 +52,33 @@ class LoginActivity : AppCompatActivity() {
             payload.put("username", binding.editTextTextUsername.text.toString())
             payload.put("password", binding.editTextTextPassword.text.toString())
 
+            binding.textView.text = binding.editTextTextUsername.text.toString()
+            binding.textView2.text = binding.editTextTextPassword.text.toString()
+
+
+//            val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, payload,
+////                    Response.Listener<JSONObject?> { response ->
+////
+////                    val userId = Integer.parseInt(response!!.getString("id"))
+////
+////                    Toast.makeText(this, userId, Toast.LENGTH_SHORT).show()
+////
+////                    val goToHome = Intent(this, HomeActivity::class.java)
+////                    goToHome.putExtra("userId", userId)
+////                    startActivity(goToHome)
+////                },
+////                Response.ErrorListener { error ->
+////                    Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
+////                }
+////            )
 
             val jsonObjectRequest = JsonObjectRequest(
-                Request.Method.GET, url, payload,
+                Request.Method.POST, url, payload,
                 Response.Listener { response ->
 
                     val userId = Integer.parseInt(response.getString("id"))
 
-                    Toast.makeText(this, userId, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, userId.toString(), Toast.LENGTH_SHORT).show()
 
                     val goToHome = Intent(this, HomeActivity::class.java)
                     goToHome.putExtra("userId", userId)
@@ -70,7 +89,10 @@ class LoginActivity : AppCompatActivity() {
                 }
             )
 
+
             queue.add(jsonObjectRequest)
+
+
 
 //            MultipartRequest request = new MultipartRequest(url, headers,
 //                new Response.Listener<NetworkResponse>() {
@@ -101,10 +123,10 @@ class LoginActivity : AppCompatActivity() {
 //
 //            val url = "http://localhost:8080/login"
 
-//            val goToRegister = Intent(this, RegisterActivity::class.java)
-//            startActivity(goToRegister)
-            val goToRegister = Intent(this, CategoryActivity::class.java)
+            val goToRegister = Intent(this, RegisterActivity::class.java)
             startActivity(goToRegister)
+//            val goToRegister = Intent(this, CategoryActivity::class.java)
+//            startActivity(goToRegister)
 
         }
     }
