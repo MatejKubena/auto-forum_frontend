@@ -66,7 +66,7 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         binding.navButtMore.setOnClickListener {
-            val goToMore = Intent(this, HomeActivity::class.java)
+            val goToMore = Intent(this, MoreActivity::class.java)
             goToMore.putExtra("userId", userId)
             startActivity(goToMore)
         }
@@ -77,7 +77,8 @@ class ProfileActivity : AppCompatActivity() {
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             Response.Listener { response ->
 
-                binding.textView3.text = "Response is: ${response.getString("password")}"
+
+                binding.textView3.text = "Response is: ${response.getString("username")}"
                 binding.textView4.text = "Response is: ${response.getString("email")}"
             },
             Response.ErrorListener { error ->

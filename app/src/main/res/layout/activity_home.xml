@@ -21,17 +21,18 @@
         android:id="@+id/rules"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:textColor="#000000"
-        android:backgroundTint="#C4C4C4"
+        android:layout_gravity="top"
+        android:layout_marginTop="0dp"
         android:background="@drawable/textview_border"
-        android:textSize="32sp"
+        android:backgroundTint="#C4C4C4"
+        android:clickable="true"
+        android:gravity="center"
         android:text="@string/rules"
+        android:textColor="#000000"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_gravity="top"
-        android:gravity="center"
-        android:layout_marginTop="0dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView

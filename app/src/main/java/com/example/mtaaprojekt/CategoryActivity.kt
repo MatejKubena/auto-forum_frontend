@@ -21,26 +21,32 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
     val exampleList = ArrayList<CategoryItem>()
 //    val adapter = CategoryAdapter(exampleList, this)
     var adapter = CategoryAdapter(exampleList, this)
+    var userId: String? = ""
 
     var postTitle: ArrayList<String> = ArrayList()
     var postText: ArrayList<String> = ArrayList()
-    var postId: ArrayList<Int> = ArrayList()
+    var postId: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-//        val categoryId = intent.extras!!.getString("categoryId")
+        val categoryId = intent.extras!!.getString("categoryId")
+        userId = intent.extras!!.getString("userId")
 
         super.onCreate(savedInstanceState)
 
         binding = ActivityCategoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        recycler_view.adapter = adapter
+        recycler_view.layoutManager = LinearLayoutManager(this)
+        recycler_view.setHasFixedSize(true)
+
         binding.topBarBack.setOnClickListener {
             finish()
         }
 
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.100.16:8080/posts/category?id=2"
+        val url = "http://192.168.100.16:8080/posts/category?id=$categoryId"
 
         val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
             Response.Listener { response ->
@@ -59,10 +65,11 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
                     val userDetail = response.getJSONObject(i)
                     postTitle.add(userDetail.getString("title"))
                     postText.add(userDetail.getString("description"))
-                    postId.add(userDetail.getInt("id"))
+                    postId.add(userDetail.getString("id"))
 
-                    val item = CategoryItem(userDetail.getString("title"), userDetail.getString("description").substring(0, 20))
-                    exampleList += item
+                    val item = CategoryItem(userDetail.getString("title"), userDetail.getString("description"))
+                    exampleList.add(i, item)
+                    adapter.notifyItemInserted(i)
                 }
 
 //                binding.textView3.text = "Response is: ${response.getString("password")}"
@@ -76,11 +83,6 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
 
         queue.add(jsonArrayRequest)
 
-//        recycler_view.adapter = adapter
-        adapter = CategoryAdapter(exampleList, this)
-        recycler_view.adapter = adapter
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.setHasFixedSize(true)
 
 
 //        val queue = Volley.newRequestQueue(this)
@@ -105,24 +107,25 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
 
     override fun onItemClick(position: Int) {
         Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
-        val clickedItem = exampleList[position]
+//        val clickedItem = exampleList[position]
 //        clickedItem.text1 = "Clicked"
-        adapter.notifyItemChanged(position)
+//        adapter.notifyItemChanged(position)
 
         val goToPost = Intent(this, PostActivity::class.java)
-//        goToPost.putExtra("userId", userId)
+        goToPost.putExtra("userId", userId)
+        goToPost.putExtra("postId", postId[position])
         startActivity(goToPost)
     }
 
-    private fun generateDummyList(size: Int): List<CategoryItem> {
-
-        val list = ArrayList<CategoryItem>()
-
-        for (i in 0 until size) {
-
-            val item = CategoryItem("Item $i", "Line 2")
-            list += item
-        }
-        return list
-    }
+//    private fun generateDummyList(size: Int): List<CategoryItem> {
+//
+//        val list = ArrayList<CategoryItem>()
+//
+////        for (i in 0 until size) {
+////
+////            val item = CategoryItem("Item $i", "Line 2")
+////            list += item
+////        }
+//        return list
+//    }
 }
