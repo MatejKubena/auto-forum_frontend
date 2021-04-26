@@ -44,7 +44,7 @@ class MoreActivity : AppCompatActivity() {
         }
 
         binding.navButtMore.setOnClickListener {
-            val goToMore = Intent(this, HomeActivity::class.java)
+            val goToMore = Intent(this, MoreActivity::class.java)
             goToMore.putExtra("userId", userId)
             startActivity(goToMore)
         }

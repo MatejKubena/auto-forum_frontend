@@ -9,6 +9,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.mtaaprojekt.databinding.ActivityLoginBinding
+import com.t2r2.volleyexample.MainActivity
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
@@ -31,8 +32,8 @@ class LoginActivity : AppCompatActivity() {
 
 
 ///
-       val goToProfile = Intent(this, ProfileActivity::class.java)
-      startActivity(goToProfile)
+//            val goToProfile = Intent(this, ProfileActivity::class.java)
+//            startActivity(goToProfile)
 //
 
 
@@ -77,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
                 Request.Method.POST, url, payload,
                 Response.Listener { response ->
 
-                    val userId = Integer.parseInt(response.getString("id"))
+                    val userId = response.getString("id")
 
                     Toast.makeText(this, userId.toString(), Toast.LENGTH_SHORT).show()
 
@@ -89,7 +90,6 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
                 }
             )
-
 
             queue.add(jsonObjectRequest)
 
@@ -119,16 +119,12 @@ class LoginActivity : AppCompatActivity() {
 
         binding.button8.setOnClickListener {
 
-            val mail = binding.editTextTextUsername.text
-            val password = binding.editTextTextPassword.text
-            val url = "http://192.168.100.16:8080/register"
-//
-//            val url = "http://localhost:8080/login"
-
-            val goToRegister = Intent(this, RegisterActivity::class.java)
-            startActivity(goToRegister)
+//            val goToRegister = Intent(this, RegisterActivity::class.java)
+//            startActivity(goToRegister)
 //            val goToRegister = Intent(this, CategoryActivity::class.java)
 //            startActivity(goToRegister)
+            val goToRegister = Intent(this, MainActivity::class.java)
+            startActivity(goToRegister)
 
         }
     }

@@ -6,6 +6,17 @@
     xmlns:tools="http://schemas.android.com/tools">
     android:padding="8dp">
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottombar"
+        android:layout_below="@+id/post_text"
+        android:layout_marginTop="48dp"
+        android:clipToPadding="false"
+        android:padding="4dp" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="50dp"
@@ -17,9 +28,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-
+        android:src="@drawable/nav_bar_home" />
 
     <TextView
         android:id="@+id/post_title"

@@ -3,6 +3,7 @@
     package="com.example.mtaaprojekt">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +26,7 @@
         <activity android:name=".MypostActivity"></activity>
         <activity android:name=".MoreActivity"></activity>
         <activity android:name=".PostActivity"></activity>
+        <activity android:name=".AddpostActivity"></activity>
     </application>
 
 </manifest>

@@ -18,24 +18,25 @@
 
 
     <TextView
-        android:id="@+id/rules"
+        android:id="@+id/catItem1"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:textColor="#000000"
-        android:backgroundTint="#C4C4C4"
+        android:layout_gravity="top"
+        android:layout_marginTop="0dp"
         android:background="@drawable/textview_border"
-        android:textSize="32sp"
+        android:backgroundTint="#C4C4C4"
+        android:clickable="true"
+        android:gravity="center"
         android:text="@string/rules"
+        android:textColor="#000000"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_gravity="top"
-        android:gravity="center"
-        android:layout_marginTop="0dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView
-        android:id="@+id/discussions"
+        android:id="@+id/catItem2"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
@@ -51,7 +52,7 @@
         android:layout_marginTop="70dp"/>
 
     <TextView
-        android:id="@+id/diagnostics"
+        android:id="@+id/catItem3"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:backgroundTint="#C4C4C4"
@@ -67,7 +68,7 @@
         android:layout_marginTop="140dp"/>
 
     <TextView
-        android:id="@+id/legislature"
+        android:id="@+id/catItem4"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
@@ -83,7 +84,7 @@
         android:layout_marginTop="210dp"/>
 
     <TextView
-        android:id="@+id/parts"
+        android:id="@+id/catItem5"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
@@ -99,7 +100,7 @@
         android:layout_marginTop="280dp"/>
 
     <TextView
-        android:id="@+id/maitenance"
+        android:id="@+id/catItem6"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#000000"
@@ -116,7 +117,7 @@
 
 
     <TextView
-        android:id="@+id/tuning"
+        android:id="@+id/catItem7"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:backgroundTint="#C4C4C4"
