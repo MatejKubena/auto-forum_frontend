@@ -15,11 +15,12 @@ import com.example.mtaaprojekt.databinding.ActivityLoginBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+    var userId: String? = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        val userId = intent.extras!!.getString("userId")
+        userId = intent.extras!!.getString("userId")
 
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
@@ -93,12 +94,11 @@ class HomeActivity : AppCompatActivity() {
         binding.catItem6.setOnClickListener {
             goTOSomewhere("6")
         }
-
-
     }
 
     fun goTOSomewhere(categoryId: String) {
         val goToCategory = Intent(this, CategoryActivity::class.java)
+        goToCategory.putExtra("userId", userId)
         goToCategory.putExtra("categoryId", categoryId)
         startActivity(goToCategory)
     }

@@ -2,6 +2,7 @@ package com.example.mtaaprojekt
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +33,7 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
         val categoryId = intent.extras!!.getString("categoryId")
         userId = intent.extras!!.getString("userId")
 
+        Log.d("userId", userId.toString())
         super.onCreate(savedInstanceState)
 
         binding = ActivityCategoryBinding.inflate(layoutInflater)
@@ -43,6 +45,13 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
 
         binding.topBarBack.setOnClickListener {
             finish()
+        }
+
+        binding.topBarAddPost.setOnClickListener {
+            val goToActivity = Intent(this, AddpostActivity::class.java)
+            goToActivity.putExtra("userId", userId)
+            goToActivity.putExtra("categoryId", categoryId)
+            startActivity(goToActivity)
         }
 
         binding.navButtProfile.setOnClickListener {

@@ -2,10 +2,15 @@ package com.example.mtaaprojekt
 
 import android.R
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -20,6 +25,10 @@ class ProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding
     private var requestQueue: RequestQueue? = null
+
+
+    private val pickImage = 100
+    private var imageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -70,24 +79,28 @@ class ProfileActivity : AppCompatActivity() {
             goToMore.putExtra("userId", userId)
             startActivity(goToMore)
         }
-//
-//        val queue = Volley.newRequestQueue(this)
-//        val url = "http://192.168.100.16:8080/user?id=$userId"
-//
-//        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
-//            Response.Listener { response ->
-//
-//
-//                binding.textView3.text = "Response is: ${response.getString("username")}"
-//                binding.textView4.text = "Response is: ${response.getString("email")}"
-//            },
-//            Response.ErrorListener { error ->
-//                binding.textView3.text = error.toString()
-//                binding.textView3.text = "ooooo"
-//            }
-//        )
-//
-//        queue.add(jsonObjectRequest)
+
+        binding.changeprofilepicbut.setOnClickListener {
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, pickImage)
+        }
+
+        val queue = Volley.newRequestQueue(this)
+        val url = "http://192.168.100.16:8080/user?id=$userId"
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            Response.Listener { response ->
+
+                binding.Hereusername.text = response.getString("username")
+
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
+            }
+        )
+
+        queue.add(jsonObjectRequest)
 
 
 
@@ -236,6 +249,14 @@ class ProfileActivity : AppCompatActivity() {
 //                }
 //            }
 //        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == pickImage) {
+            imageUri = data?.data
+            binding.imageView.setImageURI(imageUri)
+        }
     }
 
     // Get Request For JSONObject
