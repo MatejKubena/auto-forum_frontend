@@ -275,6 +275,74 @@
 
 
 
+
+
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textEmailAddress"
+
+
+
+        android:layout_below="@+id/profileusername"
+        android:layout_toRightOf="@+id/profileusername"
+        android:layout_marginStart="-50dp"
+        android:layout_marginTop="45dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+
+        android:layout_below="@+id/editTextUsername"
+        android:layout_toRightOf="@+id/editTextUsername"
+        android:layout_marginStart="-258dp"
+        android:layout_marginTop="10dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <Button
+        android:id="@+id/changepassandname"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+
+        android:layout_below="@+id/editTextPassword"
+        android:layout_toRightOf="@+id/editTextPassword"
+        android:layout_marginStart="-258dp"
+        android:layout_marginTop="10dp"
+
+
+        android:text="Change profile details"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"
         android:layout_width="match_parent"
