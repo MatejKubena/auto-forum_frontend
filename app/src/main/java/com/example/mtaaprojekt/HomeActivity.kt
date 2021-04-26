@@ -62,7 +62,11 @@ class HomeActivity : AppCompatActivity() {
 
                 binding.catItem1.text = response.getJSONObject(0).getString("name")
                 binding.catItem2.text = response.getJSONObject(1).getString("name")
-                binding.catItem3.text = userId.toString()
+                binding.catItem3.text = response.getJSONObject(2).getString("name")
+                binding.catItem4.text = response.getJSONObject(3).getString("name")
+                binding.catItem5.text = response.getJSONObject(4).getString("name")
+                binding.catItem6.text = response.getJSONObject(5).getString("name")
+                binding.catItem7.text = response.getJSONObject(6).getString("name")
 
             },
             Response.ErrorListener { error ->

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,23 +39,6 @@ class ProfileActivity : AppCompatActivity() {
 
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-//        val textView = findViewById<TextView>(R.id.text)
-// ...
-
-
-//        val url = "http://192.168.100.16:8080/user?id=1"
-//
-//        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
-//            Response.Listener { response ->
-//                binding.textView3.text = "Response: %s".format(response.toString())
-//            },
-//            Response.ErrorListener { error ->
-//            }
-//        )
-//
-//// Access the RequestQueue through your singleton class.
-//        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
 
         binding.navButtProfile.setOnClickListener {
             val goToProfile = Intent(this, ProfileActivity::class.java)
@@ -256,6 +240,7 @@ class ProfileActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK && requestCode == pickImage) {
             imageUri = data?.data
             binding.imageView.setImageURI(imageUri)
+            Log.d("image", imageUri.toString())
         }
     }
 

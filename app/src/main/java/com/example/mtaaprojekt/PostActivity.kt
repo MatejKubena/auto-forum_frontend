@@ -6,14 +6,24 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.mtaaprojekt.databinding.ActivityMypostBinding
 import com.example.mtaaprojekt.databinding.ActivityPostBinding
 import org.json.JSONObject
 
-class PostActivity : AppCompatActivity() {
+class PostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
 
     private lateinit var binding: ActivityPostBinding
+
+    val exampleList = ArrayList<CategoryItem>()
+    var adapter = CategoryAdapter(exampleList, this)
+    var userId: String? = ""
+
+    var postUsername: ArrayList<String> = ArrayList()
+    var postText: ArrayList<String> = ArrayList()
+    var postIds: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -74,8 +84,53 @@ class PostActivity : AppCompatActivity() {
 
         queue.add(jsonObjectRequest)
 
+        val url1 = "http://192.168.100.16:8080/comments?id=$postId"
+
+        val jsonObjectRequest1 = JsonArrayRequest(
+            Request.Method.GET, url1, null,
+            Response.Listener { response ->
+
+//                val jsonArray = response.getJSONObject("userId")
+//
+//                binding.postTitle.text = response.getString("title")
+//                binding.postDate.text = response.getString("createdAt").substring(0, 10)
+//                binding.postText.text = response.getString("description")
+//                binding.postUser.text = jsonArray.getString("username")
+
+                for (i in 0 until response.length()) {
+                    val userDetail = response.getJSONObject(i)
+                    val jsonArray = userDetail.getJSONObject("userId")
+                    postUsername.add(jsonArray.getString("username"))
+                    postText.add(userDetail.getString("description"))
+
+                    val item = CategoryItem(jsonArray.getString("username"), userDetail.getString("description"))
+                    exampleList.add(i, item)
+                    adapter.notifyItemInserted(i)
+                }
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
+            }
+        )
+
+        queue.add(jsonObjectRequest1)
+
+
 
 
 
     }
+
+    override fun onItemClick(position: Int) {
+        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
+//        val clickedItem = exampleList[position]
+//        clickedItem.text1 = "Clicked"
+//        adapter.notifyItemChanged(position)
+
+//        val goToPost = Intent(this, PostActivity::class.java)
+//        goToPost.putExtra("userId", userId)
+//        goToPost.putExtra("postId", postId[position])
+//        startActivity(goToPost)
+    }
+
 }
