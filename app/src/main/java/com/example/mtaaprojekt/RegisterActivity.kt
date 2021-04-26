@@ -42,7 +42,7 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             val queue = Volley.newRequestQueue(this)
-            val url = "http://192.168.100.16:8080/register"
+            val url = "http://192.168.1.102:8080/register"
             val payload = JSONObject()
 
             payload.put("username", binding.editTextTextUsername.text.toString())

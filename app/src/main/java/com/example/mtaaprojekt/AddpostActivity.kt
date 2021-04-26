@@ -40,7 +40,7 @@ class AddpostActivity : AppCompatActivity() {
             }
 
             val queue = Volley.newRequestQueue(this)
-            val url = "http://192.168.100.16:8080/post"
+            val url = "http://192.168.1.102:8080/post"
             val payload = JSONObject()
             val categoryIdPayload = JSONObject()
             val userIdPayload = JSONObject()

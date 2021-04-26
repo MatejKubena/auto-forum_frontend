@@ -86,13 +86,13 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.100.16:8080/user?id=$userId"
+        val url = "http://192.168.1.102:8080/user?id=$userId"
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener { response ->
 
-                binding.Hereusername.text = response.getString("username")
+                binding.hereusername.text = response.getString("username")
 
             },
             Response.ErrorListener { error ->

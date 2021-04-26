@@ -2,10 +2,7 @@ package com.example.mtaaprojekt
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mtaaprojekt.databinding.ActivityCategoryBinding
 import com.example.mtaaprojekt.databinding.ActivityMypostBinding
-import kotlinx.android.synthetic.main.activity_category.*
 
 class MypostActivity : AppCompatActivity(){
 

@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageButton: Button
     private lateinit var sendButton: Button
     private var imageData: ByteArray? = null
-    private val postURL: String = "http://192.168.100.16:8080/user?id=6" // remember to use your own api
+    private val postURL: String = "192.168.1.102:8080/user?id=6" // remember to use your own api
 
     companion object {
         private const val IMAGE_PICK_CODE = 999

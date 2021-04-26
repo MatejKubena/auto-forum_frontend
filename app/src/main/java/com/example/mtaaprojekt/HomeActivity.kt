@@ -54,7 +54,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.100.16:8080/home"
+        val url = "http://192.168.1.102:8080/home"
 
         val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET, url, null,
