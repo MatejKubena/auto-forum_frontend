@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottombar"
-        android:layout_below="@+id/post_text"
-        android:layout_marginTop="48dp"
+        android:layout_below="@+id/comment_text"
+        android:layout_marginTop="24dp"
         android:clipToPadding="false"
         android:padding="4dp" />
 
@@ -81,6 +81,44 @@
         android:layout_marginEnd="20dp"
         android:textColor="@android:color/black"
         android:text="Text" />
+
+    <TextView
+        android:id="@+id/comment_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_text"
+        android:text="Comments: "
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/comment_number_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_text"
+        android:text="0"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_toRightOf="@id/comment_text"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/comment_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:text="Add comment"
+        android:textColor="#2196F3"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"

@@ -20,15 +20,17 @@ class PostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
     val exampleList = ArrayList<CategoryItem>()
     var adapter = CategoryAdapter(exampleList, this)
     var userId: String? = ""
+    var postId: String? = ""
 
     var postUsername: ArrayList<String> = ArrayList()
     var postText: ArrayList<String> = ArrayList()
-    var postIds: ArrayList<String> = ArrayList()
+    var userIds: ArrayList<String> = ArrayList()
+    var commentIds: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         val userId = intent.extras!!.getString("userId")
-        val postId = intent.extras!!.getString("postId")
+        postId = intent.extras!!.getString("postId")
 
         super.onCreate(savedInstanceState)
 
@@ -60,6 +62,13 @@ class PostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
         binding.navButtMore.setOnClickListener {
             val goToMore = Intent(this, MoreActivity::class.java)
             goToMore.putExtra("userId", userId)
+            startActivity(goToMore)
+        }
+
+        binding.commentAdd.setOnClickListener {
+            val goToMore = Intent(this, AddcommentActivity::class.java)
+            goToMore.putExtra("userId", userId)
+            goToMore.putExtra("postId", postId)
             startActivity(goToMore)
         }
 
@@ -97,11 +106,15 @@ class PostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
 //                binding.postText.text = response.getString("description")
 //                binding.postUser.text = jsonArray.getString("username")
 
+                binding.commentNumberText.text = response.length().toString()
+
                 for (i in 0 until response.length()) {
                     val userDetail = response.getJSONObject(i)
                     val jsonArray = userDetail.getJSONObject("userId")
                     postUsername.add(jsonArray.getString("username"))
                     postText.add(userDetail.getString("description"))
+                    userIds.add(jsonArray.getString("id"))
+                    commentIds.add(userDetail.getString("id"))
 
                     val item = CategoryItem(jsonArray.getString("username"), userDetail.getString("description"))
                     exampleList.add(i, item)
@@ -114,11 +127,6 @@ class PostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
         )
 
         queue.add(jsonObjectRequest1)
-
-
-
-
-
     }
 
     override fun onItemClick(position: Int) {
@@ -129,7 +137,8 @@ class PostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
 
 //        val goToPost = Intent(this, PostActivity::class.java)
 //        goToPost.putExtra("userId", userId)
-//        goToPost.putExtra("postId", postId[position])
+//        goToPost.putExtra("commentUserId", userIds[position])
+//        goToPost.putExtra("commentId", commentIds[position])
 //        startActivity(goToPost)
     }
 

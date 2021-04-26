@@ -76,7 +76,7 @@ class ProfileActivity : AppCompatActivity() {
             Request.Method.GET, url, null,
             Response.Listener { response ->
 
-                binding.Hereusername.text = response.getString("username")
+                binding.hereusername.text = response.getString("username")
 
             },
             Response.ErrorListener { error ->
