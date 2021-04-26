@@ -38,7 +38,7 @@
 
 
     <TextView
-        android:id="@+id/Hereusername"
+        android:id="@+id/hereusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -53,7 +53,7 @@
         tools:ignore="SmallSp" />
 
     <TextView
-        android:id="@+id/Hereuserrole"
+        android:id="@+id/hereuserrole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -68,7 +68,7 @@
         tools:ignore="SmallSp" />
 
     <TextView
-        android:id="@+id/Hereregistered"
+        android:id="@+id/hereregistered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -84,7 +84,7 @@
 
 
     <TextView
-        android:id="@+id/Herethreads"
+        android:id="@+id/herethreads"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -99,7 +99,7 @@
         tools:ignore="SmallSp" />
 
     <TextView
-        android:id="@+id/Herecomments"
+        android:id="@+id/herecomments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -114,7 +114,7 @@
         tools:ignore="SmallSp" />
 
     <TextView
-        android:id="@+id/HereRatio"
+        android:id="@+id/hereRatio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
