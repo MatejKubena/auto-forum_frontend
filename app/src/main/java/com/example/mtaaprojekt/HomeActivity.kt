@@ -59,9 +59,9 @@ class HomeActivity : AppCompatActivity() {
             Request.Method.GET, url, null,
             Response.Listener { response ->
 
-                binding.rules.text = response.getJSONObject(0).getString("name")
-                binding.discussions.text = response.getJSONObject(1).getString("name")
-                binding.diagnostics.text = userId.toString()
+                binding.catItem1.text = response.getJSONObject(0).getString("name")
+                binding.catItem2.text = response.getJSONObject(1).getString("name")
+                binding.catItem3.text = userId.toString()
 
             },
             Response.ErrorListener { error ->
@@ -70,27 +70,27 @@ class HomeActivity : AppCompatActivity() {
 
         queue.add(jsonArrayRequest)
 
-        binding.rules.setOnClickListener {
+        binding.catItem1.setOnClickListener {
             goTOSomewhere("1")
         }
 
-        binding.rules.setOnClickListener {
+        binding.catItem2.setOnClickListener {
             goTOSomewhere("2")
         }
 
-        binding.rules.setOnClickListener {
+        binding.catItem3.setOnClickListener {
             goTOSomewhere("3")
         }
 
-        binding.rules.setOnClickListener {
+        binding.catItem4.setOnClickListener {
             goTOSomewhere("4")
         }
 
-        binding.rules.setOnClickListener {
+        binding.catItem5.setOnClickListener {
             goTOSomewhere("5")
         }
 
-        binding.rules.setOnClickListener {
+        binding.catItem6.setOnClickListener {
             goTOSomewhere("6")
         }
 

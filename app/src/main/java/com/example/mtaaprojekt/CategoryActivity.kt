@@ -45,6 +45,30 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
             finish()
         }
 
+        binding.navButtProfile.setOnClickListener {
+            val goToProfile = Intent(this, ProfileActivity::class.java)
+            goToProfile.putExtra("userId", userId)
+            startActivity(goToProfile)
+        }
+
+        binding.navButtHome.setOnClickListener{
+            val goToHome = Intent(this, HomeActivity::class.java)
+            goToHome.putExtra("userId", userId)
+            startActivity(goToHome)
+        }
+
+        binding.navButtMyposts.setOnClickListener{
+            val goToMypost = Intent(this, MypostActivity::class.java)
+            goToMypost.putExtra("userId", userId)
+            startActivity(goToMypost)
+        }
+
+        binding.navButtMore.setOnClickListener {
+            val goToMore = Intent(this, MoreActivity::class.java)
+            goToMore.putExtra("userId", userId)
+            startActivity(goToMore)
+        }
+
         val queue = Volley.newRequestQueue(this)
         val url = "http://192.168.100.16:8080/posts/category?id=$categoryId"
 

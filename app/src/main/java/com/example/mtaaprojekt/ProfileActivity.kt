@@ -70,24 +70,24 @@ class ProfileActivity : AppCompatActivity() {
             goToMore.putExtra("userId", userId)
             startActivity(goToMore)
         }
-
-        val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.100.16:8080/user?id=$userId"
-
-        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
-            Response.Listener { response ->
-
-
-                binding.textView3.text = "Response is: ${response.getString("username")}"
-                binding.textView4.text = "Response is: ${response.getString("email")}"
-            },
-            Response.ErrorListener { error ->
-                binding.textView3.text = error.toString()
-                binding.textView3.text = "ooooo"
-            }
-        )
-
-        queue.add(jsonObjectRequest)
+//
+//        val queue = Volley.newRequestQueue(this)
+//        val url = "http://192.168.100.16:8080/user?id=$userId"
+//
+//        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
+//            Response.Listener { response ->
+//
+//
+//                binding.textView3.text = "Response is: ${response.getString("username")}"
+//                binding.textView4.text = "Response is: ${response.getString("email")}"
+//            },
+//            Response.ErrorListener { error ->
+//                binding.textView3.text = error.toString()
+//                binding.textView3.text = "ooooo"
+//            }
+//        )
+//
+//        queue.add(jsonObjectRequest)
 
 
 
