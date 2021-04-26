@@ -27,6 +27,7 @@
         <activity android:name=".MoreActivity"></activity>
         <activity android:name=".PostActivity"></activity>
         <activity android:name=".AddpostActivity"></activity>
+        <activity android:name=".AddcommentActivity"></activity>
     </application>
 
 </manifest>

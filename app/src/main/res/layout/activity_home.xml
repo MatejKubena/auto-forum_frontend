@@ -4,9 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
-
-
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".HomeActivity">
@@ -16,13 +13,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/fragment_container"/>
 
-
     <TextView
         android:id="@+id/catItem1"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="top"
-        android:layout_marginTop="0dp"
         android:background="@drawable/textview_border"
         android:backgroundTint="#C4C4C4"
         android:clickable="true"
@@ -32,7 +27,9 @@
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/topBar"/>
 
 
     <TextView
@@ -49,7 +46,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
         android:gravity="center"
-        android:layout_marginTop="70dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/catItem1"/>
 
     <TextView
         android:id="@+id/catItem3"
@@ -65,7 +63,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
         android:gravity="center"
-        android:layout_marginTop="140dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/catItem2"/>
 
     <TextView
         android:id="@+id/catItem4"
@@ -81,7 +80,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
         android:gravity="center"
-        android:layout_marginTop="210dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/catItem3"/>
 
     <TextView
         android:id="@+id/catItem5"
@@ -97,7 +97,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
         android:gravity="center"
-        android:layout_marginTop="280dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/catItem4"/>
 
     <TextView
         android:id="@+id/catItem6"
@@ -113,7 +114,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
         android:gravity="center"
-        android:layout_marginTop="350dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/catItem5"/>
 
 
     <TextView
@@ -130,7 +132,28 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_gravity="top"
         android:gravity="center"
-        android:layout_marginTop="420dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/catItem6"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:theme="?attr/actionBarTheme" >
+
+        <TextView
+            android:id="@+id/topBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:text="Categories"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+    </androidx.appcompat.widget.Toolbar>
 
 
 
