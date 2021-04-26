@@ -24,114 +24,32 @@
         android:id="@+id/textdetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_below="@+id/imageView"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="20dp"
+
+
         android:text="@string/details"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+
         tools:ignore="SmallSp" />
 
 
-    <TextView
-        android:id="@+id/Hereusername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="20dp"
-        android:text="username"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="SmallSp" />
 
-    <TextView
-        android:id="@+id/Hereuserrole"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginEnd="20dp"
-        android:text="role"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="SmallSp" />
-
-    <TextView
-        android:id="@+id/Hereregistered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="355dp"
-        android:layout_marginEnd="20dp"
-        android:text="Registered"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="SmallSp" />
-
-
-    <TextView
-        android:id="@+id/Herethreads"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="390dp"
-        android:layout_marginEnd="20dp"
-        android:text="threads{num}"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="SmallSp" />
-
-    <TextView
-        android:id="@+id/Herecomments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="428dp"
-        android:layout_marginEnd="20dp"
-        android:text="comments{num}"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="SmallSp" />
-
-    <TextView
-        android:id="@+id/HereRatio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="465dp"
-        android:layout_marginEnd="20dp"
-        android:text="user ratio"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/profilerole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+
+        android:layout_below="@+id/textdetails"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="103dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:text="Role:"
+        android:layout_marginTop="15dp"
+
+        android:text="Username:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -142,11 +60,11 @@
         android:id="@+id/registeredtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+
+        android:layout_below="@+id/profilerole"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="5dp"
+
         android:text="Registered:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
@@ -158,11 +76,11 @@
         android:id="@+id/numthreads"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+
+        android:layout_below="@+id/registeredtime"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="5dp"
+
         android:text="Threads:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
@@ -174,11 +92,11 @@
         android:id="@+id/numcomments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+
+        android:layout_below="@+id/numthreads"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="213dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="5dp"
+
         android:text="Comments:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
@@ -190,11 +108,11 @@
         android:id="@+id/userratio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+
+        android:layout_below="@+id/numcomments"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="252dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="5dp"
+
         android:text="Ratio:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
@@ -206,17 +124,137 @@
         android:id="@+id/profileusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textdetails"
+
+        android:layout_below="@+id/userratio"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:text="@string/user_name"
+        android:layout_marginTop="5dp"
+
+        android:text="@string/role"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SmallSp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/hereusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/profilerole"
+        android:layout_toRightOf="@+id/profilerole"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="-25dp"
+
+
+        android:text="username"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/hereuserrole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/profileusername"
+        android:layout_toRightOf="@+id/profileusername"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="-25dp"
+
+        android:text="role"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/hereregistered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/registeredtime"
+        android:layout_toRightOf="@+id/registeredtime"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-25dp"
+
+        android:text="Registered"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
+
+
+    <TextView
+        android:id="@+id/herethreads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/numthreads"
+        android:layout_toRightOf="@+id/numthreads"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="-25dp"
+
+        android:text="threads{num}"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/herecomments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/numcomments"
+        android:layout_toRightOf="@+id/numcomments"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="-25dp"
+
+        android:text="comments{num}"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/hereRatio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/userratio"
+        android:layout_toRightOf="@+id/userratio"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="-25dp"
+
+        android:text="user ratio"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
+
+
+
+
+
+
+
+
 
     <Button
         android:id="@+id/changeprofilepicbut"
@@ -230,8 +268,80 @@
         android:textColor="@android:color/white"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+
+
+
+
+
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textEmailAddress"
+
+
+
+        android:layout_below="@+id/profileusername"
+        android:layout_toRightOf="@+id/profileusername"
+        android:layout_marginStart="-50dp"
+        android:layout_marginTop="45dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+
+        android:layout_below="@+id/editTextUsername"
+        android:layout_toRightOf="@+id/editTextUsername"
+        android:layout_marginStart="-258dp"
+        android:layout_marginTop="10dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <Button
+        android:id="@+id/changepassandname"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+
+        android:layout_below="@+id/editTextPassword"
+        android:layout_toRightOf="@+id/editTextPassword"
+        android:layout_marginStart="-258dp"
+        android:layout_marginTop="10dp"
+
+
+        android:text="Change profile details"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"
@@ -254,7 +364,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
-            android:text="Post"
+            android:text="Profile"
             android:textColor="@color/white"
             android:textSize="24dp" />
 
