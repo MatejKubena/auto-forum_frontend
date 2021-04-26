@@ -123,7 +123,7 @@ class LoginActivity : AppCompatActivity() {
 //            startActivity(goToRegister)
 //            val goToRegister = Intent(this, CategoryActivity::class.java)
 //            startActivity(goToRegister)
-            val goToRegister = Intent(this, MainActivity::class.java)
+            val goToRegister = Intent(this, RegisterActivity::class.java)
             startActivity(goToRegister)
 
         }

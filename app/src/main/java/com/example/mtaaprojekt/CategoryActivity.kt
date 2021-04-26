@@ -79,7 +79,7 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
         }
 
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.100.16:8080/posts/category?id=$categoryId"
+        val url = "http://192.168.1.102:8080/posts/category?id=$categoryId"
 
         val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
             Response.Listener { response ->
