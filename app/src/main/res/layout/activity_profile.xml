@@ -81,7 +81,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="5dp"
 
-        android:text="Threads:"
+        android:text="Posts:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,37 +104,8 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SmallSp" />
 
-    <TextView
-        android:id="@+id/userratio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_below="@+id/numcomments"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
 
-        android:text="Ratio:"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SmallSp" />
-
-    <TextView
-        android:id="@+id/profileusername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_below="@+id/userratio"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
-
-        android:text="@string/role"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SmallSp" />
 
 
 
@@ -167,21 +138,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SmallSp" />
 
-    <TextView
-        android:id="@+id/hereuserrole"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_below="@+id/profileusername"
-        android:layout_toRightOf="@+id/profileusername"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="-25dp"
-
-        android:text="role"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/hereregistered"
@@ -207,10 +164,10 @@
 
         android:layout_below="@+id/numthreads"
         android:layout_toRightOf="@+id/numthreads"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="90dp"
         android:layout_marginTop="-25dp"
 
-        android:text="threads{num}"
+        android:text="posts{num}"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -232,21 +189,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SmallSp" />
 
-    <TextView
-        android:id="@+id/hereRatio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_below="@+id/userratio"
-        android:layout_toRightOf="@+id/userratio"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="-25dp"
-
-        android:text="user ratio"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SmallSp" />
 
 
 
@@ -288,8 +231,8 @@
 
 
 
-        android:layout_below="@+id/profileusername"
-        android:layout_toRightOf="@+id/profileusername"
+        android:layout_below="@+id/numcomments"
+        android:layout_toRightOf="@+id/numcomments"
         android:layout_marginStart="-50dp"
         android:layout_marginTop="45dp"
 
