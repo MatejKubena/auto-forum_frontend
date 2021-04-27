@@ -9,7 +9,6 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.mtaaprojekt.databinding.ActivityLoginBinding
-import com.t2r2.volleyexample.MainActivity
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
