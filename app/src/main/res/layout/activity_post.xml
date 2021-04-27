@@ -135,6 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
         <TextView
             android:id="@+id/topBarTitle"
             android:layout_width="wrap_content"
@@ -173,7 +174,7 @@
             android:id="@+id/navButtHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="16dp"
             app:srcCompat="@drawable/nav_bar_home" />
         <ImageButton
             android:id="@+id/navButtMyposts"
@@ -181,12 +182,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             app:srcCompat="@drawable/nav_bar_my_threds" />
-        <ImageButton
-            android:id="@+id/navButtFavorites"
+        <ImageView
+            android:id="@+id/navButtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            app:srcCompat="@drawable/nav_bar_favorites" />
+            app:srcCompat="@drawable/car2" />
         <ImageButton
             android:id="@+id/navButtProfile"
             android:layout_width="wrap_content"

@@ -24,21 +24,14 @@
         android:id="@+id/textdetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_below="@+id/imageView"
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
-
-
         android:text="@string/details"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
         tools:ignore="SmallSp" />
-
-
-
 
     <TextView
         android:id="@+id/profilerole"
@@ -138,21 +131,21 @@
         tools:ignore="SmallSp" />
 
     <TextView
-    android:id="@+id/hereemail"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+        android:id="@+id/hereemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-    android:layout_below="@+id/profileemail"
-    android:layout_toRightOf="@+id/profileemail"
-    android:layout_marginStart="86dp"
-    android:layout_marginTop="-25dp"
+        android:layout_below="@+id/profileemail"
+        android:layout_toRightOf="@+id/profileemail"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="-25dp"
 
 
-    android:text="E-mail"
-    android:textSize="18sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:ignore="SmallSp" />
+        android:text="E-mail"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/hereregistered"
@@ -204,105 +197,6 @@
         tools:ignore="SmallSp" />
 
 
-
-
-
-
-
-
-    <Button
-        android:id="@+id/changeprofilepicbut"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/topBar"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="119dp"
-        android:layout_toRightOf="@id/imageView"
-        android:text="Change profile picture"
-        android:textColor="@android:color/white"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
-
-
-
-
-
-
-
-    <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textEmailAddress"
-        android:layout_below="@+id/numcomments"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textEmailAddress"
-        android:layout_below="@+id/editTextUsername"
-        android:layout_marginTop="8dp"
-        android:layout_centerHorizontal="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-
-        android:layout_below="@+id/editTextEmail"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
-    <Button
-        android:id="@+id/changepassandname"
-        android:layout_width="260dp"
-        android:layout_height="40dp"
-
-        android:layout_below="@+id/editTextPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-
-
-        android:text="Change profile details"
-        android:textColor="@android:color/white"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -311,6 +205,13 @@
         android:minHeight="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:theme="?attr/actionBarTheme" >
+
+        <ImageButton
+            android:id="@+id/topBarBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
             android:id="@+id/topBarTitle"

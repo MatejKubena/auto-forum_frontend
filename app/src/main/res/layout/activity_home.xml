@@ -15,9 +15,10 @@
 
     <TextView
         android:id="@+id/catItem1"
-        android:layout_width="match_parent"
+        android:layout_width="386dp"
         android:layout_height="70dp"
         android:layout_gravity="top"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/textview_border"
         android:backgroundTint="#C4C4C4"
         android:clickable="true"
@@ -34,10 +35,11 @@
 
     <TextView
         android:id="@+id/catItem2"
-        android:layout_width="match_parent"
+        android:layout_width="386dp"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/textview_border"
         android:textSize="32sp"
         android:text="@string/discussions"
@@ -51,9 +53,10 @@
 
     <TextView
         android:id="@+id/catItem3"
-        android:layout_width="match_parent"
+        android:layout_width="386dp"
         android:layout_height="70dp"
         android:backgroundTint="#C4C4C4"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/textview_border"
         android:textSize="32sp"
         android:text="@string/diagnostics"
@@ -68,10 +71,11 @@
 
     <TextView
         android:id="@+id/catItem4"
-        android:layout_width="match_parent"
+        android:layout_width="386dp"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/textview_border"
         android:textSize="32sp"
         android:text="@string/legislature"
@@ -85,10 +89,11 @@
 
     <TextView
         android:id="@+id/catItem5"
-        android:layout_width="match_parent"
+        android:layout_width="386dp"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/textview_border"
         android:textSize="32sp"
         android:text="@string/parts"
@@ -102,10 +107,11 @@
 
     <TextView
         android:id="@+id/catItem6"
-        android:layout_width="match_parent"
+        android:layout_width="386dp"
         android:layout_height="70dp"
         android:textColor="#000000"
         android:backgroundTint="#C4C4C4"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/textview_border"
         android:textSize="32sp"
         android:text="@string/maintenance"
@@ -120,12 +126,13 @@
 
     <TextView
         android:id="@+id/catItem7"
-        android:layout_width="match_parent"
+        android:layout_width="386dp"
         android:layout_height="70dp"
         android:backgroundTint="#C4C4C4"
         android:textSize="32sp"
         android:text="@string/tuning"
         android:textColor="#000000"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/textview_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -190,7 +197,7 @@
             android:id="@+id/navButtHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="16dp"
             app:srcCompat="@drawable/nav_bar_home" />
         <ImageButton
             android:id="@+id/navButtMyposts"
@@ -198,12 +205,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             app:srcCompat="@drawable/nav_bar_my_threds" />
-        <ImageButton
-            android:id="@+id/navButtFavorites"
+        <ImageView
+            android:id="@+id/navButtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            app:srcCompat="@drawable/nav_bar_favorites" />
+            app:srcCompat="@drawable/car2" />
         <ImageButton
             android:id="@+id/navButtProfile"
             android:layout_width="wrap_content"

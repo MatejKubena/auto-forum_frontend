@@ -87,6 +87,16 @@ class PostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
             val goToMore = Intent(this, AddcommentActivity::class.java)
             goToMore.putExtra("userId", userId)
             goToMore.putExtra("postId", postId)
+            goToMore.putExtra("categoryId", categoryId)
+            startActivity(goToMore)
+        }
+
+        binding.imageView.setOnClickListener{
+            val goToMore = Intent(this, ForeignprofileActivity::class.java)
+            goToMore.putExtra("userPostId", userPostId)
+            goToMore.putExtra("userId", userId)
+            goToMore.putExtra("postId", postId)
+            goToMore.putExtra("categoryId", categoryId)
             startActivity(goToMore)
         }
 

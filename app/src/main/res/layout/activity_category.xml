@@ -34,8 +34,17 @@
             android:id="@+id/topBarAddPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="16dp"
             app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+
+        <TextView
+            android:id="@+id/topBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="Category"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -52,7 +61,7 @@
             android:id="@+id/navButtHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="16dp"
             app:srcCompat="@drawable/nav_bar_home" />
         <ImageButton
             android:id="@+id/navButtMyposts"
@@ -60,12 +69,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             app:srcCompat="@drawable/nav_bar_my_threds" />
-        <ImageButton
-            android:id="@+id/navButtFavorites"
+        <ImageView
+            android:id="@+id/navButtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            app:srcCompat="@drawable/nav_bar_favorites" />
+            app:srcCompat="@drawable/car2" />
         <ImageButton
             android:id="@+id/navButtProfile"
             android:layout_width="wrap_content"

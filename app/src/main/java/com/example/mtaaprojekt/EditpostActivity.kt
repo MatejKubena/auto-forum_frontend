@@ -72,8 +72,8 @@ class EditpostActivity : AppCompatActivity()  {
 
                 postTitle = response.getString("title")
                 postText = response.getString("description")
-                binding.editPostTitle.hint = response.getString("title")
-                binding.editPostText.hint = response.getString("description")
+                binding.editPostTitle.setText(response.getString("title"))
+                binding.editPostText.setText(response.getString("description"))
             },
             Response.ErrorListener { error ->
                 Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
@@ -114,10 +114,11 @@ class EditpostActivity : AppCompatActivity()  {
                 Request.Method.PUT, url, payload,
                 Response.Listener { response ->
 
-                    val goToHome = Intent(this, CategoryActivity::class.java)
-                    goToHome.putExtra("userId", userId)
-                    goToHome.putExtra("categoryId", categoryId)
-                    startActivity(goToHome)
+                    val goToActivity = Intent(this, PostActivity::class.java)
+                    goToActivity.putExtra("userId", userId)
+                    goToActivity.putExtra("postId", postId)
+                    goToActivity.putExtra("categoryId", categoryId)
+                    startActivity(goToActivity)
                 },
                 Response.ErrorListener { error ->
                     Log.d("Error", error.toString())

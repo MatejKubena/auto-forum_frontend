@@ -18,9 +18,7 @@ import kotlinx.android.synthetic.main.activity_category.*
 class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
 
     private lateinit var binding: ActivityCategoryBinding
-//    val exampleList = generateDummyList(500)
     val exampleList = ArrayList<CategoryItem>()
-//    val adapter = CategoryAdapter(exampleList, this)
     var adapter = CategoryAdapter(exampleList, this)
     var userId: String? = ""
     var categoryId: String? = ""
@@ -87,16 +85,6 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
         val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
             Response.Listener { response ->
 
-//                val obj = response
-//                val userArray = obj.getJSONArray("users")
-//                for (i in 0 until userArray.length()) {
-//                    val userDetail = userArray.getJSONObject(i)
-//                    personName.add(userDetail.getString("name"))
-//                    emailId.add(userDetail.getString("email"))
-//                    val contact = userDetail.getJSONObject("contact")
-//                    mobileNumbers.add(contact.getString("mobile"))
-//                }
-
                 for (i in 0 until response.length()) {
                     val userDetail = response.getJSONObject(i)
                     postTitle.add(userDetail.getString("title"))
@@ -107,62 +95,31 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
                     exampleList.add(i, item)
                     adapter.notifyItemInserted(i)
                 }
-
-//                binding.textView3.text = "Response is: ${response.getString("password")}"
-//                binding.textView4.text = "Response is: ${response.getString("email")}"
             },
             Response.ErrorListener { error ->
-//                binding.textView3.text = error.toString()
-//                binding.textView3.text = "ooooo"
             }
         )
 
         queue.add(jsonArrayRequest)
 
+        val url1 = "http://192.168.100.16:8080/category?id=$categoryId"
 
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url1, null,
+            Response.Listener { response ->
 
-//        val queue = Volley.newRequestQueue(this)
-//        val url = "http://192.168.100.16:8080/posts?id=$categoryId"
-//
-//        val jsonObjectRequest = JsonObjectRequest(
-//            Request.Method.GET, url, null,
-//            Response.Listener { response ->
-//
-//                binding.textView3.text = "Response is: ${response.getString("password")}"
-//                binding.textView4.text = "Response is: ${response.getString("email")}"
-//            },
-//            Response.ErrorListener { error ->
-//                binding.textView3.text = error.toString()
-//                binding.textView3.text = "ooooo"
-//            }
-//        )
-//
-//        queue.add(jsonObjectRequest)
-
+                binding.topBarTitle.text = response.getString("name")
+            },
+            Response.ErrorListener { error ->
+            }
+        )
+        queue.add(jsonObjectRequest)
     }
 
     override fun onItemClick(position: Int) {
-//        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
-//        val clickedItem = exampleList[position]
-//        clickedItem.text1 = "Clicked"
-//        adapter.notifyItemChanged(position)
-
         val goToPost = Intent(this, PostActivity::class.java)
         goToPost.putExtra("userId", userId)
         goToPost.putExtra("postId", postId[position])
         goToPost.putExtra("categoryId", categoryId)
         startActivity(goToPost)
     }
-
-//    private fun generateDummyList(size: Int): List<CategoryItem> {
-//
-//        val list = ArrayList<CategoryItem>()
-//
-////        for (i in 0 until size) {
-////
-////            val item = CategoryItem("Item $i", "Line 2")
-////            list += item
-////        }
-//        return list
-//    }
 }

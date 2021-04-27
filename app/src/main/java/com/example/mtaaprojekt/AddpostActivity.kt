@@ -60,7 +60,7 @@ class AddpostActivity : AppCompatActivity() {
 
         binding.editAddButton.setOnClickListener {
 
-            if (binding.editPostText.text.isEmpty()){
+            if (binding.editPostText.text.toString().isEmpty()){
                 Toast.makeText(this, "user", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }

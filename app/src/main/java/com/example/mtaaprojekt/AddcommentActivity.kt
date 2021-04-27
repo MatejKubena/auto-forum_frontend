@@ -21,6 +21,7 @@ class AddcommentActivity : AppCompatActivity() {
 
         val userId = intent.extras!!.getString("userId")
         val postId = intent.extras!!.getString("postId")
+        val categoryId = intent.extras!!.getString("categoryId")
 
         super.onCreate(savedInstanceState)
 
@@ -31,6 +32,7 @@ class AddcommentActivity : AppCompatActivity() {
             val goToHome = Intent(this, PostActivity::class.java)
             goToHome.putExtra("userId", userId)
             goToHome.putExtra("postId", postId)
+            goToHome.putExtra("categoryId", categoryId)
             startActivity(goToHome)
         }
 
@@ -60,7 +62,7 @@ class AddcommentActivity : AppCompatActivity() {
 
         binding.editAddButton.setOnClickListener {
 
-            if (binding.editPostTitle.text.isEmpty()){
+            if (binding.editPostTitle.text.toString().isEmpty()){
                 Toast.makeText(this, "pass", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -86,6 +88,7 @@ class AddcommentActivity : AppCompatActivity() {
                     val goToHome = Intent(this, PostActivity::class.java)
                     goToHome.putExtra("userId", userId)
                     goToHome.putExtra("postId", postId)
+                    goToHome.putExtra("categoryId", categoryId)
                     startActivity(goToHome)
                 },
                 Response.ErrorListener { error ->
