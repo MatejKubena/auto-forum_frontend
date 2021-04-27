@@ -63,7 +63,7 @@ class AddcommentActivity : AppCompatActivity() {
         binding.editAddButton.setOnClickListener {
 
             if (binding.editPostTitle.text.toString().isEmpty()){
-                Toast.makeText(this, "pass", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty Text", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 

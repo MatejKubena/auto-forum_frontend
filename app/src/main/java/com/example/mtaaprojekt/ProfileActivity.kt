@@ -190,15 +190,6 @@ class ProfileActivity : AppCompatActivity() {
         queue.add(jsonObjectRequest2)
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (resultCode == RESULT_OK && requestCode == pickImage) {
-//            imageUri = data?.data
-//            binding.imageView.setImageURI(imageUri)
-//            Log.d("image", imageUri.toString())
-//        }
-//    }
-
     fun BitMapToString(bitmap: Bitmap): String {
         val baos = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
@@ -234,22 +225,4 @@ class ProfileActivity : AppCompatActivity() {
             queue.add(jsonObjectRequest)
         }
     }
-
-
-
-    // Get Request For JSONObject
-//    fun getData() {
-//        val requestQueue = Volley.newRequestQueue(applicationContext)
-//        try {
-//            val url = "http://localhost:8080/user?id=1"
-//            val `object` = JSONObject()
-//            val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null, Response.Listener { response ->
-//                resultTextView.setText("Resposne : $response")
-//                Toast.makeText(applicationContext, "I am OK !$response", Toast.LENGTH_LONG).show()
-//            }, Response.ErrorListener { Toast.makeText(applicationContext, "Error", Toast.LENGTH_LONG).show() })
-//            requestQueue.add(jsonObjectRequest)
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-//    }
 }

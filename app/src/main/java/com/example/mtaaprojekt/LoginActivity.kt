@@ -46,8 +46,6 @@ class LoginActivity : AppCompatActivity() {
 
                     val userId = response.getString("id")
 
-                    Toast.makeText(this, userId.toString(), Toast.LENGTH_SHORT).show()
-
                     val goToHome = Intent(this, HomeActivity::class.java)
                     goToHome.putExtra("userId", userId)
                     startActivity(goToHome)

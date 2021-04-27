@@ -2,6 +2,7 @@ package com.example.mtaaprojekt
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
@@ -21,23 +22,18 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-
-//            val mail = binding.editTextTextEmailAddress.text
-//            val password = binding.editTextTextPassword.text
-//
-//            val url = "http://localhost:8080/login"
             if (binding.editTextTextUsername.text.toString().isEmpty()){
-//                pass.error = "Username is Empty"
+                Toast.makeText(this, "Empty Text", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (binding.editTextTextEmailAddress2.text.toString().isEmpty()){
-//                pass.error = "Username is Empty"
+                Toast.makeText(this, "Empty Text", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (binding.editTextTextPassword.text.toString().isEmpty()){
-//                pass.error = "Username is Empty"
+                Toast.makeText(this, "Empty Text", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 

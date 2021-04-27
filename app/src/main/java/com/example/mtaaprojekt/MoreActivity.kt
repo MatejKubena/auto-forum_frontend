@@ -53,30 +53,6 @@ class MoreActivity : AppCompatActivity() {
 
             val goToLogin = Intent(this, LoginActivity::class.java)
             startActivity(goToLogin)
-
-//            val queue = Volley.newRequestQueue(this)
-//            val url = "http://192.168.100.16:8080/login"
-//
-//            val jsonObjectRequest = JsonObjectRequest(
-//                Request.Method.GET, url, null,
-//                Response.Listener { response ->
-//
-//                    val userId = Integer.parseInt(response.getString("id"))
-//
-//                    Toast.makeText(this, userId, Toast.LENGTH_SHORT).show()
-//
-//                    val goToHome = Intent(this, HomeActivity::class.java)
-//                    goToHome.putExtra("userId", userId)
-//                    startActivity(goToHome)
-//                },
-//                Response.ErrorListener { error ->
-//                    Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
-//                }
-//            )
-//
-//            queue.add(jsonObjectRequest)
-
-
         }
     }
 }

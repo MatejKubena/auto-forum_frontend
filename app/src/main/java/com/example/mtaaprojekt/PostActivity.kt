@@ -187,13 +187,6 @@ class PostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener {
             Request.Method.GET, url1, null,
             Response.Listener { response ->
 
-//                val jsonArray = response.getJSONObject("userId")
-//
-//                binding.postTitle.text = response.getString("title")
-//                binding.postDate.text = response.getString("createdAt").substring(0, 10)
-//                binding.postText.text = response.getString("description")
-//                binding.postUser.text = jsonArray.getString("username")
-
                 binding.commentNumberText.text = response.length().toString()
 
                 for (i in 0 until response.length()) {

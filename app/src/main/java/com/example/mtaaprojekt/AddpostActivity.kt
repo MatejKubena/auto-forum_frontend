@@ -61,12 +61,12 @@ class AddpostActivity : AppCompatActivity() {
         binding.editAddButton.setOnClickListener {
 
             if (binding.editPostText.text.toString().isEmpty()){
-                Toast.makeText(this, "user", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty Text", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (binding.editPostTitle.text.isEmpty()){
-                Toast.makeText(this, "pass", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty Text", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -101,8 +101,5 @@ class AddpostActivity : AppCompatActivity() {
             )
             queue.add(jsonObjectRequest)
         }
-
-
-
     }
 }
