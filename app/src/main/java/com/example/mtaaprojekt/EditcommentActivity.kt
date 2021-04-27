@@ -9,13 +9,13 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.mtaaprojekt.databinding.ActivityAddCommentBinding
-import com.example.mtaaprojekt.databinding.ActivityAddPostBinding
+import com.example.mtaaprojekt.databinding.ActivityEditCommentBinding
 import org.json.JSONObject
 
-class AddcommentActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAddCommentBinding
+class EditcommentActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityEditCommentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -24,7 +24,7 @@ class AddcommentActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        binding = ActivityAddCommentBinding.inflate(layoutInflater)
+        binding = ActivityEditCommentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.topBarBack.setOnClickListener{

@@ -24,19 +24,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
 
-//            val mail = binding.editTextTextEmailAddress.text
-//            val password = binding.editTextTextPassword.text
-//
-//            val url = "http://localhost:8080/login"
-
-
-
-///
-//            val goToProfile = Intent(this, ProfileActivity::class.java)
-//            startActivity(goToProfile)
-//
-
-
             if (binding.editTextTextUsername.text.isEmpty()){
                 Toast.makeText(this, "user", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -53,26 +40,6 @@ class LoginActivity : AppCompatActivity() {
 
             payload.put("username", binding.editTextTextUsername.text.toString())
             payload.put("password", binding.editTextTextPassword.text.toString())
-
-            binding.textView.text = binding.editTextTextUsername.text.toString()
-            binding.textView2.text = binding.editTextTextPassword.text.toString()
-
-
-//            val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, payload,
-////                    Response.Listener<JSONObject?> { response ->
-////
-////                    val userId = Integer.parseInt(response!!.getString("id"))
-////
-////                    Toast.makeText(this, userId, Toast.LENGTH_SHORT).show()
-////
-////                    val goToHome = Intent(this, HomeActivity::class.java)
-////                    goToHome.putExtra("userId", userId)
-////                    startActivity(goToHome)
-////                },
-////                Response.ErrorListener { error ->
-////                    Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
-////                }
-////            )
 
             val jsonObjectRequest = JsonObjectRequest(
                 Request.Method.POST, url, payload,
@@ -119,12 +86,12 @@ class LoginActivity : AppCompatActivity() {
 
         binding.button8.setOnClickListener {
 
-//            val goToRegister = Intent(this, RegisterActivity::class.java)
-//            startActivity(goToRegister)
+            val goToRegister = Intent(this, RegisterActivity::class.java)
+            startActivity(goToRegister)
 //            val goToRegister = Intent(this, CategoryActivity::class.java)
 //            startActivity(goToRegister)
-            val goToRegister = Intent(this, MainActivity::class.java)
-            startActivity(goToRegister)
+//            val goToRegister = Intent(this, MainActivity::class.java)
+//            startActivity(goToRegister)
 
         }
     }

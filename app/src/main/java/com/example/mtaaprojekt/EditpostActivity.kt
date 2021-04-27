@@ -3,35 +3,40 @@ package com.example.mtaaprojekt
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.mtaaprojekt.databinding.ActivityAddCommentBinding
 import com.example.mtaaprojekt.databinding.ActivityAddPostBinding
+import com.example.mtaaprojekt.databinding.ActivityEditPostBinding
 import org.json.JSONObject
 
-class AddcommentActivity : AppCompatActivity() {
+class EditpostActivity : AppCompatActivity()  {
 
-    private lateinit var binding: ActivityAddCommentBinding
+    private lateinit var binding: ActivityEditPostBinding
+    var postTitle: String = ""
+    var postText: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         val userId = intent.extras!!.getString("userId")
         val postId = intent.extras!!.getString("postId")
+        val categoryId = intent.extras!!.getString("categoryId")
 
         super.onCreate(savedInstanceState)
 
-        binding = ActivityAddCommentBinding.inflate(layoutInflater)
+        binding = ActivityEditPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.topBarBack.setOnClickListener{
-            val goToHome = Intent(this, PostActivity::class.java)
-            goToHome.putExtra("userId", userId)
-            goToHome.putExtra("postId", postId)
-            startActivity(goToHome)
+            val goToActivity = Intent(this, PostActivity::class.java)
+            goToActivity.putExtra("userId", userId)
+            goToActivity.putExtra("postId", postId)
+            goToActivity.putExtra("categoryId", categoryId)
+            startActivity(goToActivity)
         }
 
         binding.navButtProfile.setOnClickListener {
@@ -58,34 +63,60 @@ class AddcommentActivity : AppCompatActivity() {
             startActivity(goToMore)
         }
 
+        val queue = Volley.newRequestQueue(this)
+        val url = "http://192.168.100.16:8080/post?id=$postId"
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            Response.Listener { response ->
+
+                postTitle = response.getString("title")
+                postText = response.getString("description")
+                binding.editPostTitle.hint = response.getString("title")
+                binding.editPostText.hint = response.getString("description")
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
+            }
+        )
+
+        queue.add(jsonObjectRequest)
+
         binding.editAddButton.setOnClickListener {
 
-            if (binding.editPostTitle.text.isEmpty()){
-                Toast.makeText(this, "pass", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
             val queue = Volley.newRequestQueue(this)
-            val url = "http://192.168.100.16:8080/comment"
+            val url = "http://192.168.100.16:8080/post?id=$postId"
             val payload = JSONObject()
-            val postIdPayload = JSONObject()
+            val categoryIdPayload = JSONObject()
             val userIdPayload = JSONObject()
 
-            postIdPayload.put("id", postId)
+            categoryIdPayload.put("id", categoryId)
             userIdPayload.put("id", userId)
-            payload.put("description", binding.editPostTitle.text.toString())
-            payload.put("postId", postIdPayload)
+
+            if (binding.editPostTitle.text.toString().isEmpty()){
+                payload.put("title", postTitle)
+            } else{
+                payload.put("title", binding.editPostTitle.text.toString())
+            }
+
+            if (binding.editPostText.text.toString().isEmpty()){
+                payload.put("description", postText)
+            } else {
+                payload.put("description", binding.editPostText.text.toString())
+            }
+
+            payload.put("categoryId", categoryIdPayload)
             payload.put("userId", userIdPayload)
 
             Log.d("tag", payload.toString())
 
             val jsonObjectRequest = JsonObjectRequest(
-                Request.Method.POST, url, payload,
+                Request.Method.PUT, url, payload,
                 Response.Listener { response ->
 
-                    val goToHome = Intent(this, PostActivity::class.java)
+                    val goToHome = Intent(this, CategoryActivity::class.java)
                     goToHome.putExtra("userId", userId)
-                    goToHome.putExtra("postId", postId)
+                    goToHome.putExtra("categoryId", categoryId)
                     startActivity(goToHome)
                 },
                 Response.ErrorListener { error ->

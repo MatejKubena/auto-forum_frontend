@@ -27,6 +27,37 @@ class AddpostActivity : AppCompatActivity() {
         binding = ActivityAddPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.topBarBack.setOnClickListener{
+            val goToHome = Intent(this, CategoryActivity::class.java)
+            goToHome.putExtra("userId", userId)
+            goToHome.putExtra("categoryId", categoryId)
+            startActivity(goToHome)
+        }
+
+        binding.navButtProfile.setOnClickListener {
+            val goToProfile = Intent(this, ProfileActivity::class.java)
+            goToProfile.putExtra("userId", userId)
+            startActivity(goToProfile)
+        }
+
+        binding.navButtHome.setOnClickListener{
+            val goToHome = Intent(this, HomeActivity::class.java)
+            goToHome.putExtra("userId", userId)
+            startActivity(goToHome)
+        }
+
+        binding.navButtMyposts.setOnClickListener{
+            val goToMypost = Intent(this, MypostActivity::class.java)
+            goToMypost.putExtra("userId", userId)
+            startActivity(goToMypost)
+        }
+
+        binding.navButtMore.setOnClickListener {
+            val goToMore = Intent(this, MoreActivity::class.java)
+            goToMore.putExtra("userId", userId)
+            startActivity(goToMore)
+        }
+
         binding.editAddButton.setOnClickListener {
 
             if (binding.editPostText.text.isEmpty()){
@@ -68,10 +99,7 @@ class AddpostActivity : AppCompatActivity() {
                     Toast.makeText(this, error.toString(), Toast.LENGTH_SHORT).show()
                 }
             )
-
             queue.add(jsonObjectRequest)
-
-
         }
 
 

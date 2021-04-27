@@ -135,7 +135,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
-
         <TextView
             android:id="@+id/topBarTitle"
             android:layout_width="wrap_content"
@@ -144,6 +143,20 @@
             android:text="Post"
             android:textColor="@color/white"
             android:textSize="24dp" />
+
+        <ImageButton
+            android:id="@+id/topBarEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="128dp"
+            app:srcCompat="@drawable/editicon" />
+
+        <ImageButton
+            android:id="@+id/topBarDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:srcCompat="@drawable/deleteicon" />
 
     </androidx.appcompat.widget.Toolbar>
 

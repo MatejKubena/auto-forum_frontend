@@ -23,6 +23,7 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
 //    val adapter = CategoryAdapter(exampleList, this)
     var adapter = CategoryAdapter(exampleList, this)
     var userId: String? = ""
+    var categoryId: String? = ""
 
     var postTitle: ArrayList<String> = ArrayList()
     var postText: ArrayList<String> = ArrayList()
@@ -30,7 +31,7 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        val categoryId = intent.extras!!.getString("categoryId")
+        categoryId = intent.extras!!.getString("categoryId")
         userId = intent.extras!!.getString("userId")
 
         Log.d("userId", userId.toString())
@@ -44,7 +45,9 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
         recycler_view.setHasFixedSize(true)
 
         binding.topBarBack.setOnClickListener {
-            finish()
+            val goToHome = Intent(this, HomeActivity::class.java)
+            goToHome.putExtra("userId", userId)
+            startActivity(goToHome)
         }
 
         binding.topBarAddPost.setOnClickListener {
@@ -139,7 +142,7 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
     }
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
 //        val clickedItem = exampleList[position]
 //        clickedItem.text1 = "Clicked"
 //        adapter.notifyItemChanged(position)
@@ -147,6 +150,7 @@ class CategoryActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListene
         val goToPost = Intent(this, PostActivity::class.java)
         goToPost.putExtra("userId", userId)
         goToPost.putExtra("postId", postId[position])
+        goToPost.putExtra("categoryId", categoryId)
         startActivity(goToPost)
     }
 

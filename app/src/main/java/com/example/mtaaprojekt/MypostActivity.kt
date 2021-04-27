@@ -88,7 +88,7 @@ class MypostActivity : AppCompatActivity(), CategoryAdapter.OnItemClickListener 
     }
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
 //        val clickedItem = exampleList[position]
 //        clickedItem.text1 = "Clicked"
 //        adapter.notifyItemChanged(position)
